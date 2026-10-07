@@ -10,11 +10,7 @@ import { Button } from "@/components/ui/button";
 const AuthActions = () => (
   <div>
     <SignInButton>
-      <Button
-        variant="ghost"
-        size="sm"
-        className="text-sm dark:text-white"
-      >
+      <Button variant="ghost" size="sm" className="text-sm dark:text-white">
         Sign in
       </Button>
     </SignInButton>
@@ -51,12 +47,13 @@ export const Navbar = () => {
             )
           ) : isSignedIn ? (
             <div className="flex flex-col items-end space-y-1 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
-              <span className="hidden text-sm text-gray-500 sm:block">
+              <UserButton />
+              {/*<span className="hidden text-sm text-gray-500 sm:block">
                 Welcome,{" "}
                 {user?.firstName ??
                   user?.emailAddresses[0]?.emailAddress ??
                   "there"}
-              </span>
+              </span> */}
               {!isDashboardPage && (
                 <Link href="/dashboard">
                   <Button className="ml-2 flex items-center gap-1">

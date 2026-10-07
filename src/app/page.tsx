@@ -1,9 +1,14 @@
 import { Navbar } from "@/components/Navbar";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { ClipboardPlus } from "lucide-react";
+import { useBoards } from "@/lib/hooks/useBoards";
 
 export default function Home() {
+  const { createBoard } = useBoards();
+  const handleCreateBoard = async () => {
+    await createBoard();
+  };
   return (
     <div className="">
       <Navbar />
@@ -16,11 +21,10 @@ export default function Home() {
           done. Just like Trello, but built by you.
         </p>
         <div className="flex gap-4">
-          <Link href="/dashboard">
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3">
-              Go to Dashboard
-            </Button>
-          </Link>
+          <Button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3">
+            <ClipboardPlus className="h-5 w-5" />
+            Create a board
+          </Button>
         </div>
       </main>
     </div>

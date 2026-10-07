@@ -9,7 +9,7 @@ const DashboardPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <main className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-6 sm:mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
             Welcome back,{" "}
